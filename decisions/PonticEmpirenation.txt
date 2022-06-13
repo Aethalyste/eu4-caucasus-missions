@@ -1,5 +1,5 @@
 country_decisions = {
-     
+
 		pontic_empire = {
 			major = yes
 			potential = {
@@ -13,10 +13,17 @@ country_decisions = {
 			}
 			
 			provinces_to_highlight = {
-				province_id = 330
-				province_id = 285
-				province_id = 286
-				province_id = 462
+				OR = {
+					province_id = 330
+					province_id = 285
+					province_id = 286
+					province_id = 462
+					province_id = 2410
+				}
+				OR = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
 			}
             allow = {
 				is_free_or_tributary_trigger = yes
@@ -26,8 +33,9 @@ country_decisions = {
 
 				owns_core_province = 330 # Trebizond
 				owns_core_province = 285 # Cafa
-				owns_core_province = 286 # Azov	
+				owns_core_province = 286 # Azov
 				owns_core_province = 462 # Odishi
+				owns_core_province = 2410 # Theodoro
 				
 				num_of_owned_provinces_with = {
 					is_core = ROOT
@@ -35,7 +43,7 @@ country_decisions = {
 						region = crimea_region
 						region = caucasia_region
 					}
-					value = 15
+					value = 20
 				}
             }
             effect = {

@@ -3,4 +3,4 @@ add_government_reform = autocracy_reform
 primary_culture = pontic
 religion = orthodox
 technology_group = eastern
-capital = 423 # T'bilisi
+capital = 285 # Caffa

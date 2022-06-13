@@ -7,6 +7,8 @@ far_left = {
 			tag = GEO
 			tag = SME
 			tag = IME
+
+			tag = POE
 		}
 	}
     has_country_shield = yes
@@ -54,7 +56,20 @@ far_left = {
 			}
 		}
 		effect = {
-			
+			kastamonu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 }
@@ -68,6 +83,8 @@ left = {
 			tag = GEO
 			tag = SME
 			tag = IME
+
+			tag = POE
 		}
 	}
     has_country_shield = yes
@@ -160,6 +177,9 @@ center = {
 			tag = GEO
 			tag = SME
 			tag = IME
+
+			# TODO move to a different tree
+			tag = POE
 		}
 	}
     has_country_shield = yes
@@ -299,6 +319,8 @@ right = {
 			tag = GEO
 			tag = SME
 			tag = IME
+
+			tag = POE
 		}
 	}
     has_country_shield = yes
