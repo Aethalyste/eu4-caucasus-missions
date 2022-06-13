@@ -1,0 +1,383 @@
+far_left = {
+    slot = 1
+	generic = no
+	ai = yes
+	potential = {
+	    OR = {
+			tag = GEO
+			tag = SME
+			tag = IME
+		}
+	}
+    has_country_shield = yes
+	
+	control_trebizond = {
+		icon = mission_galleys_in_port
+		position = 2
+		required_missions = { unite_georgia }
+		provinces_to_highlight = {
+			province_id = 330
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			330 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			erzurum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	consolidate_erzurum = {
+		icon = mission_pf_soldier
+		position = 3
+		required_missions = { control_trebizond }
+		provinces_to_highlight = {
+			area = erzurum_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			erzurum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			
+		}
+	}
+}
+
+left = {
+    slot = 2
+	generic = no
+	ai = yes
+	potential = {
+	    OR = {
+			tag = GEO
+			tag = SME
+			tag = IME
+		}
+	}
+    has_country_shield = yes
+	
+	conquer_crimea = {
+		icon = mission_dominate_genoa
+		position = 3
+		required_missions = { across_the_caucasus }
+		provinces_to_highlight = {
+			area = crimea_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			crimea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			yedisan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			zaporizhia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	invade_western_steppes = {
+		icon = mission_collect_yasak
+		position = 4
+		required_missions = { 
+			conquer_crimea
+			conquer_azov
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = yedisan_area
+				area = zaporizhia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			yedisan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zaporizhia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			ruthenia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			moldavia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+center = {
+    slot = 3
+	generic = no
+	ai = yes
+	potential = {
+	    OR = {
+			tag = GEO
+			tag = SME
+			tag = IME
+		}
+	}
+    has_country_shield = yes
+
+	unite_georgia = {
+		icon = mission_conquer_50_development
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				area = imereti_area
+				area = samtskhe_area
+				area = kartli_kakheti_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			imereti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			samtskhe_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kartli_kakheti_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { legitimacy_equivalent = 85 }
+				}
+				add_devotion = 20
+				add_legitimacy = 20
+			}
+			else = {
+				add_stability_or_adm_power = yes
+			}
+			
+			circassia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			
+			330 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	across_the_caucasus = {
+		icon = unify_piedmont
+		required_missions = { unite_georgia }
+		provinces_to_highlight = {
+			area = circassia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			circassia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			azov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			crimea_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dagestan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquer_azov = {
+		icon = mission_non-western_cavalry_raid
+		position = 3
+		required_missions = { across_the_caucasus }
+		provinces_to_highlight = {
+			area = azov_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			azov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			lower_don_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+	
+right = {
+    slot = 4
+	generic = no
+	ai = yes
+	potential = {
+	    OR = {
+			tag = GEO
+			tag = SME
+			tag = IME
+		}
+	}
+    has_country_shield = yes
+
+	conquer_dagestan = {
+		icon = mission_persian_soldiers
+		position = 3
+		required_missions = { across_the_caucasus }
+		provinces_to_highlight = {
+			area = dagestan_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			dagestan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			astrakhan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	invade_eastern_steppes = {
+		icon = mission_pf_map_table
+		position = 4
+		required_missions = {
+			conquer_azov
+			conquer_dagestan			
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = astrakhan_area
+				area = lower_don_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			astrakhan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_don_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tambov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saratov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_yik_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

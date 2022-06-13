@@ -1,0 +1,57 @@
+country_decisions = {
+     
+		pontic_empire = {
+			major = yes
+			potential = {
+				was_never_end_game_tag_trigger = yes
+				normal_or_historical_nations = yes
+				NOT = { tag = POE}
+				OR = {
+					culture_group = greek
+					culture_group = caucasian
+				}
+			}
+			
+			provinces_to_highlight = {
+				province_id = 330
+				province_id = 285
+				province_id = 286
+				province_id = 462
+			}
+            allow = {
+				is_free_or_tributary_trigger = yes
+				is_nomad = no
+				is_at_war = no
+				NOT = { exists	= POE }
+
+				owns_core_province = 330 # Trebizond
+				owns_core_province = 285 # Cafa
+				owns_core_province = 286 # Azov	
+				owns_core_province = 462 # Odishi
+				
+				num_of_owned_provinces_with = {
+					is_core = ROOT
+					OR = {
+						region = crimea_region
+						region = caucasia_region
+					}
+					value = 15
+				}
+            }
+            effect = {
+				change_tag = POE
+				remove_non_electors_emperors_from_empire_effect = yes
+				swap_non_generic_missions = no
+				set_government_rank = 3
+				add_country_modifier = {
+						name = "centralization_modifier"
+						duration = 7300
+				}
+				add_prestige = 50
+                    
+            }  
+            ai_will_do = {
+                    factor = 1
+            }
+        }			
+    }       					

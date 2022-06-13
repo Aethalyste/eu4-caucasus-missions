@@ -1,0 +1,53 @@
+﻿l_english:
+ # Georgia
+ unite_georgia_title: "Unite Georgia"
+ unite_georgia_desc: "For too long Georgia have been fractured. Time to unite it under our rule!"
+ control_trebizond_title: "Subjugate Trebizond"
+ control_trebizond_desc: "Not only a strategic fortress, but also a rich center of trade, Trebizond is a breakaway state from the remnants of the Byzantine Empire. The Ottomans have eyes all over it, but we should take it for ourselves."
+ consolidate_erzurum_title: "Consolidate Erzurum"
+ consolidate_erzurum_desc: "Now that Trebizond is in our hands, we should consolidate the area around it, further weakening Ottomans ambitions."
+ across_the_caucasus_title: "Across the Caucasus"
+ across_the_caucasus_desc: "We have united the lands south of the Caucasus peaks. Now is time to cross them and subjugate the inferior tribes to the north!"
+ conquer_azov_title: "Conquer Azov"
+ conquer_azov_desc: "Azov region is an important strategic location and will become a foothold for expansion into the steppes."
+ conquer_crimea_title: "Conquer Crimea"
+ conquer_crimea_desc: "Crimea is an important trade hub on the Black Sea, controlled by those filthy genoese merchants. We shall drive them out!"
+ conquer_dagestan_title: "Conquer Dagestan"
+ conquer_dagestan_desc: "We should solidify our control over Caucasus by subjugating all the lesser tribes residing in Dagestan."
+ invade_western_steppes_title: "Invade Western Steppes"
+ invade_western_steppes_desc: "It is time for a big game! We should take the remaining ports on the north of Black Sea."
+ invade_eastern_steppes_title: "Invade Eastern Steppes"
+ invade_eastern_steppes_desc: "We went far from our homeland. Huge Pontic Steppes are lying ahead. We shall take this agrarian-rich land to support our growing nation"
+ 
+ # Shirvan
+ develop_country_title: "Develop Country"
+ develop_country_desc: ""
+ kharabakh_must_be_ours_title: "Subjugate Kharabakh"
+ kharabakh_must_be_ours_desc: "WIP"
+ conquer_armenia_title: "Conquer Armenia"
+ conquer_armenia_desc: "WIP"
+ control_capital_state_title: "Control Capital State"
+ control_capital_state_desc: "WIP"
+ conquer_tabriz_title: "Conquer Tabriz"
+ conquer_tabriz_desc: "WIP"
+ conquer_azerbaijan_title: "Conquer Azerbaijan"
+ conquer_azerbaijan_desc: "WIP"
+ conquer_tabarestan_title: "Conquer Tabarestan"
+ conquer_tabarestan_desc: "WIP"
+ conquer_ajam_title: "Conquer Ajam"
+ conquer_ajam_desc: "WIP"
+ 
+ # Zoroastrianism
+ call_of_ahura_mazda_title: "Call of Ahura Mazda"
+ call_of_ahura_mazda_desc: "No longer shall we be silenced! No longer shall we be opressed! The time has come to embrace the faith of our forefathers!"
+ strengthen_the_faith_title: "Strengthen the Faith"
+ strengthen_the_faith_desc: "WIP"
+ bastion_of_faith_title: "Bastion of Faith"
+ bastion_of_faith_desc: "WIP"
+ 
+ # Pontic Empire
+ POE: "Pontic Empire"
+ POE_ADJ: "Pontic"
+ pontic_empire_title: "Reform the Pontic Empire"
+ pontic_empire_desc: "We control the strategic lands around the Black Sea. Time to reform the ancient Pontic Empire as a proof of our domination."
+ 

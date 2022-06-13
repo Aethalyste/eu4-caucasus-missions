@@ -1,0 +1,300 @@
+expand_north = {
+    slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = SRV
+			tag = ARL
+		}
+	}
+    has_country_shield = yes
+
+	kharabakh_must_be_ours = {
+		icon = pacify_the_albanian_lands
+		position = 2
+		provinces_to_highlight = {
+			province_id = 2202
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		required_missions = { develop_country }
+		trigger = {
+			2202 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			armenia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquer_armenia = {
+		icon = mission_pf_soldier
+		position = 3
+		required_missions = { kharabakh_must_be_ours }
+		provinces_to_highlight = {
+			area = armenia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			armenia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { legitimacy_equivalent = 85 }
+				}
+				add_devotion = 20
+				add_legitimacy = 20
+			}
+			else = {
+				add_stability_or_adm_power = yes
+			}
+		}
+	}
+	
+}
+
+expand_west = {
+    slot = 2
+	generic = no
+	ai = yes
+	potential = {
+	    OR = {
+			tag = SRV
+			tag = ARL
+		}
+	}
+    has_country_shield = yes
+
+    develop_country = {
+		icon = prosper_in_piedmont
+		required_missions = { }
+		trigger = { grown_by_development = 2 }
+		effect = {
+			shirvan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2202 = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquer_tabriz = {
+		icon = mission_non-western_cavalry_raid
+		position = 3
+		required_missions = { control_capital_state }
+		provinces_to_highlight = {
+			area = tabriz_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			tabriz_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			shahrizor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+
+expand_south = {
+    slot = 3
+	generic = no
+	ai = yes
+	potential = {
+	    OR = {
+			tag = SRV
+			tag = ARL
+		}
+	}
+    has_country_shield = yes
+
+	control_capital_state = {
+		icon = mission_conquer_50_development
+		position = 2
+		provinces_to_highlight = {
+			area = shirvan_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		required_missions = { develop_country }
+		trigger = {
+			shirvan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tabriz_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			azerbaijan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tabarestan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			
+		}
+	}
+
+	conquer_azerbaijan = {
+		icon = mission_persian_soldiers
+		position = 3
+		required_missions = { control_capital_state }
+		provinces_to_highlight = {
+			area = azerbaijan_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			azerbaijan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			luristan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			iraq_e_ajam_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquer_ajam = {
+		icon = mission_unite_home_region
+		position = 4
+		required_missions = { conquer_azerbaijan }
+		provinces_to_highlight = {
+			area = iraq_e_ajam_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			iraq_e_ajam_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			isfahan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			birjand_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+}
+
+
+expand_east = {
+    slot = 4
+	generic = no
+	ai = yes
+	potential = {
+	    OR = {
+			tag = SRV
+			tag = ARL
+		}
+	}
+    has_country_shield = yes
+	
+	conquer_tabarestan = {
+		icon = mission_invade_island
+		position = 3
+		required_missions = { control_capital_state }
+		provinces_to_highlight = {
+			area = tabarestan_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			tabarestan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			mashhad_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+
+
