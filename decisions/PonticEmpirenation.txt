@@ -29,7 +29,7 @@ country_decisions = {
 				is_free_or_tributary_trigger = yes
 				is_nomad = no
 				is_at_war = no
-				NOT = { exists	= POE }
+				NOT = { exists = POE }
 
 				owns_core_province = 330 # Trebizond
 				owns_core_province = 285 # Cafa
@@ -42,6 +42,7 @@ country_decisions = {
 					OR = {
 						region = crimea_region
 						region = caucasia_region
+						area = erzurum_area
 					}
 					value = 20
 				}
@@ -49,14 +50,33 @@ country_decisions = {
             effect = {
 				change_tag = POE
 				remove_non_electors_emperors_from_empire_effect = yes
-				swap_non_generic_missions = no
+				swap_non_generic_missions = yes
 				set_government_rank = 3
 				add_country_modifier = {
-						name = "centralization_modifier"
-						duration = 7300
+					name = "centralization_modifier"
+					duration = 7300
 				}
 				add_prestige = 50
-                    
+				
+				every_province = {
+					limit = {
+						OR = {
+							region = crimea_region
+							
+							area = circassia_area
+							area = dagestan_area
+							area = imereti_area
+							area = samtskhe_area
+							area = kartli_kakheti_area
+							
+							area = erzurum_area
+						}
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+
             }  
             ai_will_do = {
                     factor = 1

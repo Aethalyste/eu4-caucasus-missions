@@ -7,8 +7,6 @@ far_left = {
 			tag = GEO
 			tag = SME
 			tag = IME
-
-			tag = POE
 		}
 	}
     has_country_shield = yes
@@ -83,8 +81,6 @@ left = {
 			tag = GEO
 			tag = SME
 			tag = IME
-
-			tag = POE
 		}
 	}
     has_country_shield = yes
@@ -177,9 +173,6 @@ center = {
 			tag = GEO
 			tag = SME
 			tag = IME
-
-			# TODO move to a different tree
-			tag = POE
 		}
 	}
     has_country_shield = yes
@@ -319,8 +312,6 @@ right = {
 			tag = GEO
 			tag = SME
 			tag = IME
-
-			tag = POE
 		}
 	}
     has_country_shield = yes

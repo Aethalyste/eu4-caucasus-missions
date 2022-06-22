@@ -1,0 +1,281 @@
+south = {
+    slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = POE
+	}
+    has_country_shield = yes
+	
+	consolidate_erzurum = {
+		icon = mission_pf_soldier
+		position = 1
+		required_missions = { }
+		provinces_to_highlight = {
+			area = erzurum_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			erzurum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			kastamonu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			rum_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	invade_anatolia = {
+		position = 2
+		icon = mission_crusade_for_varna
+		required_missions = {
+			consolidate_erzurum
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = kastamonu_area
+				area = rum_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			kastamonu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			rum_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			anatolia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+west = {
+    slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = POE
+	}
+    has_country_shield = yes
+
+	invade_western_steppes = {
+		icon = mission_collect_yasak
+		position = 1
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				area = yedisan_area
+				area = zaporizhia_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			yedisan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			zaporizhia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			ruthenia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			moldavia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	subjugate_moldavia = {
+		position = 2
+		icon = mission_eastern_european_city
+		required_missions = {
+			invade_western_steppes
+		}
+		provinces_to_highlight = {
+			area = moldavia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			moldavia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			every_province = {
+				limit = {
+					OR = {
+						region = poland_region
+						region = carpathia_region
+						
+						area = silistria_area
+					}
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+ultimate = {
+    slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = POE
+	}
+    has_country_shield = yes
+	
+	mare_nostrum = {
+		icon = mission_galleys_in_port
+		position = 3
+		required_missions = { 
+			subjugate_moldavia
+			invade_anatolia
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = wallachia_area
+				
+				area = silistria_area
+				area = hudavendigar_area
+				area = ankara_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			wallachia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			silistria_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			ankara_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			balkan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+east = {
+    slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = POE
+	}
+    has_country_shield = yes
+	
+	invade_eastern_steppes = {
+		icon = mission_pf_map_table
+		position = 1
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				area = astrakhan_area
+				area = lower_don_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			astrakhan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			lower_don_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			tambov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			saratov_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_yik_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
