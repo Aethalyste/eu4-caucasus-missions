@@ -17,33 +17,43 @@
  invade_western_steppes_title: "Invade Western Steppes"
  invade_western_steppes_desc: "It is time for a big game! We should take the remaining ports on the north of Black Sea."
  invade_eastern_steppes_title: "Invade Eastern Steppes"
- invade_eastern_steppes_desc: "We went far from our homeland. Huge Pontic Steppes are lying ahead. We shall take this agrarian-rich land to support our growing nation"
+ invade_eastern_steppes_desc: "We went far from our homeland. Huge Pontic Steppes lay ahead. We shall take this agrarian-rich land to support our growing nation"
+ 
+ # Pontic Empire
+ invade_anatolia_title: "Invade Anatolia"
+ invade_anatolia_desc: "We have shown that we can beat the Turks. Now we shall show them, who is the true master of Anatolia"
+ subjugate_moldavia_title: "Subjugate Moldavia"
+ subjugate_moldavia_desc: "Situated on the Danube estuary, Moldavia is an important area for anyone who wants to control Black Sea trade."
+ mare_nigrum_title: "Mare Nigrum"
+ mare_nigrum_desc: "We shall solidify our rule over Black Sea by taking the remaining areas around it."
+ worlds_desire_title: "City of the World's Desire"
+ worlds_desire_desc: "Now that entire Black Sea is firmly under our control, there is one final step, that will truly make us an empire."
  
  # Shirvan
  develop_country_title: "Develop Country"
  develop_country_desc: ""
  kharabakh_must_be_ours_title: "Subjugate Kharabakh"
- kharabakh_must_be_ours_desc: "WIP"
+ kharabakh_must_be_ours_desc: ""
  conquer_armenia_title: "Conquer Armenia"
- conquer_armenia_desc: "WIP"
+ conquer_armenia_desc: ""
  control_capital_state_title: "Control Capital State"
- control_capital_state_desc: "WIP"
+ control_capital_state_desc: ""
  conquer_tabriz_title: "Conquer Tabriz"
- conquer_tabriz_desc: "WIP"
+ conquer_tabriz_desc: ""
  conquer_azerbaijan_title: "Conquer Azerbaijan"
- conquer_azerbaijan_desc: "WIP"
+ conquer_azerbaijan_desc: ""
  conquer_tabarestan_title: "Conquer Tabarestan"
- conquer_tabarestan_desc: "WIP"
+ conquer_tabarestan_desc: ""
  conquer_ajam_title: "Conquer Ajam"
- conquer_ajam_desc: "WIP"
+ conquer_ajam_desc: ""
  
  # Zoroastrianism
  call_of_ahura_mazda_title: "Call of Ahura Mazda"
  call_of_ahura_mazda_desc: "No longer shall we be silenced! No longer shall we be opressed! The time has come to embrace the faith of our forefathers!"
  strengthen_the_faith_title: "Strengthen the Faith"
- strengthen_the_faith_desc: "WIP"
+ strengthen_the_faith_desc: ""
  bastion_of_faith_title: "Bastion of Faith"
- bastion_of_faith_desc: "WIP"
+ bastion_of_faith_desc: ""
  
  # Pontic Empire
  POE: "Pontic Empire"
@@ -51,3 +61,5 @@
  pontic_empire_title: "Reform the Pontic Empire"
  pontic_empire_desc: "We control the strategic lands around the Black Sea. Time to reform the ancient Pontic Empire to strengthen the legitimacy of our conquests."
  
+ # Modifiers
+ poe_true_empire: "True Empire"

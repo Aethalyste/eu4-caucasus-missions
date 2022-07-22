@@ -1,85 +1,128 @@
 country_decisions = {
 
-		pontic_empire = {
-			major = yes
-			potential = {
-				was_never_end_game_tag_trigger = yes
-				normal_or_historical_nations = yes
-				NOT = { tag = POE}
-				OR = {
-					culture_group = greek
-					culture_group = caucasian
-				}
+	pontic_empire = {
+		major = yes
+		potential = {
+			was_never_end_game_tag_trigger = yes
+			normal_or_historical_nations = yes
+			NOT = { tag = POE}
+			OR = {
+				culture_group = greek
+				culture_group = caucasian
 			}
-			
-			provinces_to_highlight = {
-				OR = {
-					province_id = 330
-					province_id = 285
-					province_id = 286
-					province_id = 462
-					province_id = 2410
-				}
-				OR = {
-					NOT = { owned_by = ROOT }
-					NOT = { is_core = ROOT }
-				}
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 330
+				province_id = 285
+				province_id = 286
+				province_id = 462
+				province_id = 2410
 			}
-            allow = {
-				is_free_or_tributary_trigger = yes
-				is_nomad = no
-				is_at_war = no
-				NOT = { exists = POE }
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			NOT = { exists = POE }
 
-				owns_core_province = 330 # Trebizond
-				owns_core_province = 285 # Cafa
-				owns_core_province = 286 # Azov
-				owns_core_province = 462 # Odishi
-				owns_core_province = 2410 # Theodoro
-				
-				num_of_owned_provinces_with = {
-					is_core = ROOT
+			owns_core_province = 330 # Trebizond
+			owns_core_province = 285 # Cafa
+			owns_core_province = 286 # Azov
+			owns_core_province = 462 # Odishi
+			owns_core_province = 2410 # Theodoro
+			
+			num_of_owned_provinces_with = {
+				is_core = ROOT
+				OR = {
+					region = crimea_region
+					region = caucasia_region
+					area = erzurum_area
+				}
+				value = 20
+			}
+		}
+		effect = {
+			change_tag = POE
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+			set_government_rank = 3
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			
+			every_province = {
+				limit = {
 					OR = {
 						region = crimea_region
-						region = caucasia_region
+						
+						area = circassia_area
+						area = dagestan_area
+						area = imereti_area
+						area = samtskhe_area
+						area = kartli_kakheti_area
+						
 						area = erzurum_area
 					}
-					value = 20
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
 				}
-            }
-            effect = {
-				change_tag = POE
-				remove_non_electors_emperors_from_empire_effect = yes
-				swap_non_generic_missions = yes
-				set_government_rank = 3
-				add_country_modifier = {
-					name = "centralization_modifier"
-					duration = 7300
-				}
-				add_prestige = 50
-				
-				every_province = {
-					limit = {
-						OR = {
-							region = crimea_region
-							
-							area = circassia_area
-							area = dagestan_area
-							area = imereti_area
-							area = samtskhe_area
-							area = kartli_kakheti_area
-							
-							area = erzurum_area
-						}
-						NOT = { is_core = ROOT }
-						NOT = { is_claim = ROOT }
-					}
-					add_permanent_claim = ROOT
-				}
+				add_permanent_claim = ROOT
+			}
 
-            }  
-            ai_will_do = {
-                    factor = 1
-            }
-        }			
-    }       					
+		}  
+		ai_will_do = {
+				factor = 1
+		}
+	}
+
+	make_constantinople_capital = {
+		potential = {
+			tag = POE
+			owns = 151
+			NOT = { capital = 151 }
+			NOT = { has_country_flag = relocated_capital_constantinople }
+			normal_or_historical_nations = yes
+		}
+		allow = {
+			is_at_war = no
+			controls = 151
+			owns = 316		# Bithnyia
+			owns = 317		# Bursa
+			owns = 1764		# Burgas
+		}
+		effect = {
+			set_country_flag = relocated_capital_constantinople
+			add_stability = 1
+			add_core = 151
+			151 = {
+				move_capital_effect = yes
+				change_religion = ROOT
+				change_culture = ROOT
+			}
+			if = {
+				limit = {
+					NOT = { has_global_flag = constantinople_restored }
+				}
+				151 = {
+					add_base_tax = 4
+					add_base_production = 4
+					add_base_manpower = 3
+				}
+				set_global_flag = constantinople_restored
+			}
+			set_government_rank = 3
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		do_not_core = 151 # Constantinople
+	}
+}       					

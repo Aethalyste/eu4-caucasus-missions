@@ -1,0 +1,3 @@
+poe_true_empire = {
+	administrative_efficiency = 0.05
+}
