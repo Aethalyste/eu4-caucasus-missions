@@ -2,7 +2,6 @@ version="1.1.3"
 tags={
 	"Alternative History"
 	"Missions And Decisions"
-	"New Nations"
 }
 name="Caucasus Missions"
 picture="thumbnail.png"
